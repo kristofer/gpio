@@ -95,7 +95,7 @@ func (p *Pin) GetState() (st State, err error) {
 	if p.dir == INPUT {
 		st, err = p.state, nil
 	} else if p.dir == OUTPUT {
-		_, err = fmt.Fscan(p.fd, &st)
+		_, err = fmt.Fscan(p.fd, st)
 	}
 	return
 }
